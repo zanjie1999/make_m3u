@@ -6,7 +6,8 @@ Python版本2.7<br>
 丢到播放列表存放目录,并修改程序第15行,他会在运行目录下生成你的歌单的m3u播放列表<br>
 <br>
   例如<br>
-  <code>mp3dir = "..\\音乐\\".decode('utf-8') //设置音乐存放目录为上级目录的'音乐'文件夹</code><br> 
+  <code>mp3dir = "..\\音乐\\".decode('utf-8') //设置音乐存放目录为上级目录的'音乐'文件夹</code><br>
+<br>
 这里山灵m1播放器亲测可用<br>
 <br>
 这是我的小站:[zanjie1999.16mb.com](http://zanjie1999.16mb.com)<br>
