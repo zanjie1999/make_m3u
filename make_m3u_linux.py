@@ -12,7 +12,7 @@ import os
 cx = sqlite3.connect(os.path.expanduser('~')+"/.config/netease-cloud-music/OnlineLibrary.db")
 cx.row_factory = sqlite3.Row
 
-mp3dir = "mp3\\"
+mp3dir = "..\\音乐\\".decode('utf-8') 
 
 def getPlaylist():
 	cu=cx.cursor()
