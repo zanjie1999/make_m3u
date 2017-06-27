@@ -2,7 +2,7 @@
 
 #网易云音乐m3u生成器
 #Linux版
-#版本 1.6
+#版本 1.7
 
 import sqlite3
 import json
@@ -11,6 +11,8 @@ import os
 
 cx = sqlite3.connect(os.path.expanduser('~')+"/.config/netease-cloud-music/OnlineLibrary.db")
 cx.row_factory = sqlite3.Row
+
+mp3dir = "mp3\\"
 
 def getPlaylist():
 	cu=cx.cursor()
@@ -42,7 +44,7 @@ def getPlaylistName(playlistName):
         tihuanList = ['?', '*', '/', '\\', '<', '>', ':', '\"', '|']
         for i in tihuanList:
                 if i in playlistName:
-                        playlistName = playlistName.replace(i,'_')
+                        playlistName = playlistName.replace(i,' ')
         return playlistName
 
 def writePlaylistToFile(pid, playlistName):
@@ -58,7 +60,7 @@ def writePlaylistToFile(pid, playlistName):
 				detail=getOfflineMusicDetail(tid)
 				if detail is not None:
 					count=count + 1
-					file.writelines(u"\n#EXTINF:" + detail[0] + u"\n" + detail[1])
+					file.writelines(u"\n#EXTINF:" + detail[0] + u"\n" + mp3dir + detail[1])
 	except Exception, e:
 		raise
 	else:
